@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Oinam Lab</title>
+<title>WhatsApp a New Number</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -63,7 +63,25 @@
 </head>
 <body>
 
-	<h1>Oinam Lab</h1>
+<form id="form">
+	<input type="tel" id="tel" placeholder="Phone with International Code" autofocus>
+	<button type="submit">Text via WhatsApp</button>
+</form>
 
+<p>
+	<small>
+		Send a new WhatsApp message to a new number without adding it to your contacts. This leverages the simplest form of WhatsApp API <mark>https://wa.me/+0xxPHONE00</mark>.
+	</small>
+</p>
+
+<script>
+let form = document.getElementById("form");
+let input = document.getElementById("tel");
+
+form.addEventListener("submit", (event) => {
+event.preventDefault();
+window.open(`https://wa.me/${input.value}`, "_self")
+});
+</script>
 </body>
 </html>
